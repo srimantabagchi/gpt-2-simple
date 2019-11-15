@@ -9,7 +9,7 @@ from flask_httpauth import HTTPBasicAuth
 app = Flask(__name__, static_url_path="")
 auth = HTTPBasicAuth()
 
-model_name = "1558M"
+model_name = "124M"
 
 if not os.path.isdir(os.path.join("models", model_name)):
     print("Downloading {model_name} model...")
