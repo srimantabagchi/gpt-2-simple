@@ -1,6 +1,14 @@
-tensorflow
+tensorflow==1.15
 regex
 requests
 tqdm
 numpy
 toposort
+Flask==0.10.1
+Flask-HTTPAuth==2.3.0
+Flask-RESTful==0.3.1
+Jinja2==2.7.3
+MarkupSafe==0.23
+Werkzeug==0.11.15
+itsdangerous==0.24
+six==1.10.0
