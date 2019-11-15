@@ -4,12 +4,13 @@ import datetime
 import gpt_2_simple as gpt2
 
 from flask import Flask
+from flask import jsonify
 from flask_httpauth import HTTPBasicAuth
 
 app = Flask(__name__, static_url_path="")
 auth = HTTPBasicAuth()
 
-model_name = "124M"
+model_name = "355M"
 
 if not os.path.isdir(os.path.join("models", model_name)):
     print("Downloading {model_name} model...")
@@ -33,15 +34,16 @@ def start():
                          length=100,
                          temperature=0.7,
                          top_p=0.9,
-                         nsamples=1,
-                         batch_size=1
+                         return_as_list=True
                          )
 
     total_time = datetime.datetime.now() - start_time
 
     print("Total time required is = ", total_time)
 
-    return text
+    print(text)
+
+    return " ".join(text)
 
 
 if __name__ == '__main__':
